@@ -1,0 +1,38 @@
+group 'co.tradedepot.pay.flutter_qr'
+version '1.0'
+
+buildscript {
+    repositories {
+        google()
+        jcenter()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.5.0'
+    }
+}
+
+rootProject.allprojects {
+    repositories {
+        google()
+        jcenter()
+    }
+}
+
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 29
+
+    defaultConfig {
+        minSdkVersion 16
+    }
+    lintOptions {
+        disable 'InvalidPackage'
+    }
+    dependencies {
+        api 'com.google.mlkit:barcode-scanning:16.0.3'
+        implementation 'androidx.annotation:annotation:1.0.0'
+        implementation 'androidx.exifinterface:exifinterface:1.0.0'
+    }
+}
